@@ -1,4 +1,6 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import Footer from './footer'; // Import Footer component
 
 export default function Home() {
   return (
@@ -6,9 +8,9 @@ export default function Home() {
       <p className="text-3xl font-semibold text-center mb-8">
         Hello There! 👋
       </p>
-      <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-       
-      </div>
+      
+      {/* Footer */}
+      <Footer /> {/* Use Footer component */}
     </main>
   )
 }
