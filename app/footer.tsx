@@ -14,7 +14,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-0 flex h-16 items-center justify-center dark:bg-gray-200">
+    <div className="fixed inset-x-0 bottom-0 flex h-16 items-center justify-center bg-gray-300">
       <div className="flex gap-4">
         {/* LinkedIn */}
         <a href="https://www.linkedin.com/in/tommyraspati" target="_blank" rel="noopener noreferrer"

@@ -8,7 +8,7 @@ import HighlightText from '@/app/ui/highlight_text'; // Import the HighlightText
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-start justify-start p-12 sm:p-24 bg-gray-50 dark:bg-gray-200">
+    <main className="flex min-h-screen flex-col items-start justify-start p-12 sm:p-24 bg-gray-300 ">
       <h1 className={`${inter.className} text-1xl sm:text-2xl text-yellow-600 mb-2 sm:mb-4`}>
         Hello, My name is
       </h1>
@@ -26,7 +26,7 @@ export default function Home() {
         </h1>
       </div>
       <h2 className={`${lusitana.className} text-1xl sm:text-2xl text-black mt-8 sm:mt-4 mb-2 sm:mb-4`}>
-        I am currently a third-year Computer Science student at <HighlightText>Universitas Indonesia</HighlightText>, 
+        Many people know me as Tommy and I am currently a third-year Computer Science student at <HighlightText>Universitas Indonesia</HighlightText>, 
         where I am deeply engaged in exploring the realms of <HighlightText>Machine Learning</HighlightText>, <HighlightText>Data Science</HighlightText>, and <HighlightText>Software Engineering</HighlightText>.  
         I am eager to meet new people and embrace new challenges. My goal is to not only expand my technical 
         expertise but also to collaborate and learn from others, building innovative solutions that make a tangible impact.
