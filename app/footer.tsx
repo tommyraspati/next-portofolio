@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({darkMode}) => {
   };
 
   return (
-    <div className={`${darkMode ? 'bg-dark-mode' : 'bg-light-mode'} absolute inset-x-0 bottom-0 flex h-16 items-center justify-center `}>      
+    <div className={`${darkMode ? 'bg-dark-mode' : 'bg-light-mode'} relative inset-x-0 bottom-0 flex h-16 items-center justify-center `}>      
     <div className="flex gap-4">
         {/* LinkedIn */}
         <a href="https://www.linkedin.com/in/tommyraspati" target="_blank" rel="noopener noreferrer"
