@@ -29,3 +29,19 @@ body {
 /* *{
   border: 1px solid blue;
 } */
+
+.bg-dark-mode {
+  @apply bg-[#202020];
+}
+
+.bg-light-mode{
+  @apply bg-[#fffdf7];
+}
+
+.highlighted-text-dark-mode {
+  @apply text-[#fdc500];
+}
+
+.highlighted-text-light-mode {
+  @apply text-yellow-600;
+}
