@@ -6,7 +6,7 @@ import Typewriter from 'typewriter-effect';
 import HighlightText from '@/app/ui/highlight_text'; // Import the HighlightText component
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -14,9 +14,9 @@ export default function Home() {
 
   return (
     <div className={`${darkMode ? 'dark' : ''}`}>
-      <main className={`flex min-h-screen flex-col items-start justify-start p-12 sm:p-24 ${darkMode ? 'bg-dark-mode text-white' : 'bg-light-mode text-black'}`}>
+      <main className={`flex flex-col min-h-screen  items-start justify-start p-12 sm:p-24 ${darkMode ? 'bg-dark-mode text-white' : 'bg-light-mode text-black'}`}>
         {/* Dark Mode Toggle Button */}
-        <button onClick={toggleDarkMode} className="absolute top-4 right-4">
+        <button onClick={toggleDarkMode} className="absolute top-4 right-4 pulse">
           {darkMode ? '🌙' : '☀️'}
         </button>
 
