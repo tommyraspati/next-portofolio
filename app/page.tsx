@@ -62,8 +62,8 @@ export default function Home() {
           </h1>
         </div>
         <h2 className={`${lusitana.className} text-1xl sm:text-2xl ${darkMode ? 'text-gray-300' : 'text-black'} mt-16 sm:mt-4 mb-2 sm:mb-4`}>
-          Many people know me as  <HighlightText darkMode={darkMode}> Tommy </HighlightText> and I&apos;m 20 years old. I am currently a third-year Computer Science student at <HighlightText darkMode={darkMode}>Universitas Indonesia</HighlightText>, 
-          where I am deeply engaged in exploring the realms of <HighlightText darkMode={darkMode}>Machine Learning</HighlightText>, <HighlightText darkMode={darkMode}>Data Science</HighlightText>, and <HighlightText darkMode={darkMode}>Software Engineering</HighlightText>.  
+          Many people know me as  <HighlightText darkMode={darkMode}> Tommy </HighlightText>. I&apos;m a third-year Computer Science student at <HighlightText darkMode={darkMode}>Universitas Indonesia</HighlightText>, currently 20 years old.
+          I am deeply engaged in exploring the realms of <HighlightText darkMode={darkMode}>Machine Learning</HighlightText>, <HighlightText darkMode={darkMode}>Data Science</HighlightText>, and <HighlightText darkMode={darkMode}>Software Engineering</HighlightText>.  
           I am eager to meet new people and embrace new challenges. My goal is to not only expand my technical 
           expertise but also to collaborate and learn from others, building innovative solutions that make a tangible impact.
         </h2>
@@ -78,7 +78,7 @@ export default function Home() {
             <div key={index} 
                 className="p-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105" 
                 style={{ 
-                  backgroundColor: darkMode ? '#2c2c2c' : '#f0f0f0',
+                  backgroundColor: darkMode ? '#2c2c2c' : '#f4f4f4',
                   boxShadow: darkMode ? '0 4px 8px rgba(255, 255, 255, 0.2)' : '0 4px 8px rgba(0, 0, 0, 0.2)',
                   border: darkMode ? '1px solid #444' : '1px solid #ccc', // Adjusted border color for dark mode
                 }}>
