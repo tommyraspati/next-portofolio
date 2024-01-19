@@ -36,7 +36,7 @@ export default function Home() {
   
 
   return (
-    <div className={`${darkMode ? 'dark' : ''}`}>
+    <div>
       <main className={`flex flex-col relative min-h-screen items-start justify-start p-12 sm:p-24 pb-16 ${darkMode ? 'bg-dark-mode text-white' : 'bg-light-mode text-black'}`}>        {/* Dark Mode Toggle Button */}
       <button onClick={toggleDarkMode} className="absolute top-7 right-7 pulse">
       <div className={`w-10 h-10 rounded-full shadow-lg flex items-center justify-center ${darkMode ? 'bg-dark-mode' : 'bg-light-mode'}`}>
