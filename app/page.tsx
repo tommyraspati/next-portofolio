@@ -20,7 +20,7 @@ export default function Home() {
           {darkMode ? '🌙' : '☀️'}
         </button>
 
-        <h1 className={`${darkMode ? 'text-[#ffd500]' : 'text-yellow-500'} ${inter.className} text-1xl sm:text-2xl mb-2 sm:mb-4 font-medium`}>          Hello, My name is
+        <h1 className={`${darkMode ? 'text-[#ffd500]' : 'text-yellow-600'} ${inter.className} text-1xl sm:text-2xl mb-2 sm:mb-4 font-medium`}>          Hello, My name is
         </h1>
         <div className="h-12 sm:h-24 ">
           <h1 className={`${lusitana.className} text-3xl sm:text-5xl ${darkMode ? 'text-gray-300' : 'text-black'} mb-2 sm:mb-4`}>
@@ -35,7 +35,7 @@ export default function Home() {
             />
           </h1>
         </div>
-        <h2 className={`${lusitana.className} text-1xl sm:text-2xl ${darkMode ? 'text-gray-300' : 'text-black'} mt-8 sm:mt-4 mb-2 sm:mb-4`}>
+        <h2 className={`${lusitana.className} text-1xl sm:text-2xl ${darkMode ? 'text-gray-300' : 'text-black'} mt-16 sm:mt-4 mb-2 sm:mb-4`}>
           Many people know me as Tommy and I am currently a third-year Computer Science student at <HighlightText darkMode={darkMode}>Universitas Indonesia</HighlightText>, 
           where I am deeply engaged in exploring the realms of <HighlightText darkMode={darkMode}>Machine Learning</HighlightText>, <HighlightText darkMode={darkMode}>Data Science</HighlightText>, and <HighlightText darkMode={darkMode}>Software Engineering</HighlightText>.  
           I am eager to meet new people and embrace new challenges. My goal is to not only expand my technical 
