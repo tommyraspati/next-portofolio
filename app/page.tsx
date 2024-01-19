@@ -36,7 +36,7 @@ export default function Home() {
   
 
   return (
-    <div>
+    <div className={`${darkMode ? 'dark' : ''}`}>
       <main className={`flex flex-col relative min-h-screen items-start justify-start p-12 sm:p-24 pb-16 ${darkMode ? 'bg-dark-mode text-white' : 'bg-light-mode text-black'}`}>        {/* Dark Mode Toggle Button */}
       <button onClick={toggleDarkMode} className="absolute top-7 right-7 pulse">
       <div className={`w-10 h-10 rounded-full shadow-lg flex items-center justify-center ${darkMode ? 'bg-dark-mode' : 'bg-light-mode'}`}>
@@ -62,7 +62,7 @@ export default function Home() {
           </h1>
         </div>
         <h2 className={`${lusitana.className} text-1xl sm:text-2xl ${darkMode ? 'text-gray-300' : 'text-black'} mt-16 sm:mt-4 mb-2 sm:mb-4`}>
-          Many people know me as  <HighlightText darkMode={darkMode}> Tommy </HighlightText> and I'm 20 years old. I am currently a third-year Computer Science student at <HighlightText darkMode={darkMode}>Universitas Indonesia</HighlightText>, 
+          Many people know me as  <HighlightText darkMode={darkMode}> Tommy </HighlightText> and I&apos;m 20 years old. I am currently a third-year Computer Science student at <HighlightText darkMode={darkMode}>Universitas Indonesia</HighlightText>, 
           where I am deeply engaged in exploring the realms of <HighlightText darkMode={darkMode}>Machine Learning</HighlightText>, <HighlightText darkMode={darkMode}>Data Science</HighlightText>, and <HighlightText darkMode={darkMode}>Software Engineering</HighlightText>.  
           I am eager to meet new people and embrace new challenges. My goal is to not only expand my technical 
           expertise but also to collaborate and learn from others, building innovative solutions that make a tangible impact.
