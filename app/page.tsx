@@ -16,7 +16,7 @@ export default function Home() {
     <div className={`${darkMode ? 'dark' : ''}`}>
       <main className={`flex flex-col min-h-screen  items-start justify-start p-12 sm:p-24 ${darkMode ? 'bg-dark-mode text-white' : 'bg-light-mode text-black'}`}>
         {/* Dark Mode Toggle Button */}
-        <button onClick={toggleDarkMode} className="absolute top-4 right-4 pulse">
+        <button onClick={toggleDarkMode} className="absolute top-7 right-7 pulse">
           {darkMode ? '🌙' : '☀️'}
         </button>
 
