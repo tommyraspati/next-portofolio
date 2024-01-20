@@ -19,18 +19,18 @@ export default function Home() {
       technologies: ["Next.js", "React", "Tailwind CSS","TypeScript"],
       link: "https://tommyraspati.com", // Replace with your project link
     },
-    {
-      name: "Pusat Pengaduan G20 Topic: Anti-corruption",
-      description: "A team project developing a website and mobile app for anti-corruption complaints, allowing users to report suspected corruption cases. My contribution was mainly focused on the user dashboard part of the website.",
-      technologies: ["Django", "Tailwind", "Flutter", "Dart",",Python", "AJAX"],
-      link: "https://github.com/orgs/PBP-G20Project/repositories", // Replace with your project link
-    },
-    {
-      name: "Sponzy",
-      description: "A website platform connecting event organizers with sponsors. In this team project, I was responsible for developing features related to the sponsor user, including updating the sponsor's profile and searching for events.",
-      technologies: ["Django,tailwind,python","AJAX"],
-      link: "http://34.71.2.74:8000/", // Replace with your project link
-    },
+    // {
+    //   name: "Pusat Pengaduan G20 Topic: Anti-corruption",
+    //   description: "A team project developing a website and mobile app for anti-corruption complaints, allowing users to report suspected corruption cases. My contribution was mainly focused on the user dashboard part of the website.",
+    //   technologies: ["Django", "Tailwind", "Flutter", "Dart",",Python", "AJAX"],
+    //   link: "https://github.com/orgs/PBP-G20Project/repositories", // Replace with your project link
+    // },
+    // {
+    //   name: "Sponzy",
+    //   description: "A website platform connecting event organizers with sponsors. In this team project, I was responsible for developing features related to the sponsor user, including updating the sponsor's profile and searching for events.",
+    //   technologies: ["Django,tailwind,python","AJAX"],
+    //   link: "http://34.71.2.74:8000/", // Replace with your project link
+    // },
     // Add more projects as needed
   ];
   
