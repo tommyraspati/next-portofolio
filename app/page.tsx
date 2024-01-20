@@ -4,6 +4,8 @@ import Footer from './footer'; // Import Footer component
 import { lusitana, inter } from '@/app/ui/fonts';
 import Typewriter from 'typewriter-effect';
 import HighlightText from '@/app/ui/highlight_text'; // Import the HighlightText component
+import { SiPython, SiNextdotjs,SiDjango, SiSpringboot, SiFlutter } from 'react-icons/si';
+
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -67,9 +69,43 @@ export default function Home() {
           I am eager to meet new people and embrace new challenges. My goal is to not only expand my technical 
           expertise but also to collaborate and learn from others, building innovative solutions that make a tangible impact.
         </h2>
-        
-        {/* Projects Section */}
-        <section className="w-full mt-12 mb-10"> {/* Added bottom margin for spacing */}        
+      
+        <section className="w-full mt-12 mb-10">
+  <h2 className={`${darkMode ? 'text-[#ffd500]' : 'text-yellow-600'} ${inter.className} text-2xl sm:text-3xl mb-4 sm:mb-6 font-medium`}>
+    Skills
+  </h2>
+  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
+    {/* Skill Item - Spring Boot */}
+    <div className="skill-item">
+      <SiSpringboot className="mx-auto h-8 sm:h-12 w-8 sm:w-12 mb-1 sm:mb-2" />
+      <p className={`${darkMode ? 'text-gray-300' : 'text-black'} text-sm sm:text-base mb-4 ${lusitana.className}`}>Spring Boot (Java)</p>
+    </div>
+    {/* Skill Item - Django */}
+    <div className="skill-item">
+      <SiDjango className="mx-auto h-8 sm:h-12 w-8 sm:w-12 mb-1 sm:mb-2" />
+      <p className={`${darkMode ? 'text-gray-300' : 'text-black'} text-sm sm:text-base mb-4 ${lusitana.className}`}>Django (Python)</p>
+    </div>
+    {/* Skill Item - Next.js */}
+    <div className="skill-item">
+      <SiNextdotjs className="mx-auto h-8 sm:h-12 w-8 sm:w-12 mb-1 sm:mb-2" />
+      <p className={`${darkMode ? 'text-gray-300' : 'text-black'} text-sm sm:text-base mb-4 ${lusitana.className}`}>Next.js (TypeScript)</p>
+    </div>
+    {/* Skill Item - Flutter */}
+    <div className="skill-item">
+      <SiFlutter className="mx-auto h-8 sm:h-12 w-8 sm:w-12 mb-1 sm:mb-2" />
+      <p className={`${darkMode ? 'text-gray-300' : 'text-black'} text-sm sm:text-base mb-4 ${lusitana.className}`}>Flutter (Dart)</p>
+    </div>
+    {/* Skill Item - Python */}
+    <div className="skill-item">
+      <SiPython className="mx-auto h-8 sm:h-12 w-8 sm:w-12 mb-1 sm:mb-2" />
+      <p className={`${darkMode ? 'text-gray-300' : 'text-black'} text-sm sm:text-base mb-4 ${lusitana.className}`}>Python for Machine Learning/Data Science</p>
+    </div>
+  </div>
+</section>
+
+
+      {/* Projects Section */}
+      <section className="w-full mt-12 mb-10">      
         <h2 className={`${darkMode ? 'text-[#ffd500]' : 'text-yellow-600'} ${inter.className} text-2xl sm:text-3xl mb-4 sm:mb-6 font-medium`}>          
           Projects
         </h2>
