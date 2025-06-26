@@ -55,7 +55,7 @@ export default function Home() {
           <h1 className={`${lusitana.className} text-3xl sm:text-5xl ${darkMode ? 'text-gray-300' : 'text-black'} mb-2 sm:mb-4`}>
             <Typewriter
               options={{
-                strings: ['Raspati Mahatma Kurnia D.'],
+                strings: ['Raspati Mahatma Kurnia Dharmatmaja'],
                 autoStart: true,
                 loop: false,
                 deleteSpeed: Infinity,
@@ -65,8 +65,8 @@ export default function Home() {
           </h1>
         </div>
         <h2 className={`${lusitana.className} text-1xl sm:text-2xl ${darkMode ? 'text-gray-300' : 'text-black'} mt-16 sm:mt-4 mb-2 sm:mb-4`}>
-          Many people know me as  <HighlightText darkMode={darkMode}> Tommy </HighlightText>. I&apos;m a third-year Computer Science student at <HighlightText darkMode={darkMode}>Universitas Indonesia</HighlightText>, currently 20 years old.
-          I am deeply engaged in exploring the realms of <HighlightText darkMode={darkMode}>Machine Learning</HighlightText>, <HighlightText darkMode={darkMode}>Data Science</HighlightText>, and <HighlightText darkMode={darkMode}>Software Engineering</HighlightText>.  
+          Many people know me as  <HighlightText darkMode={darkMode}> Tommy </HighlightText>. I&apos;m a fourth-year Computer Science student at <HighlightText darkMode={darkMode}>Universitas Indonesia</HighlightText>, currently 22 years old.
+          I am deeply engaged in exploring the realms of <HighlightText darkMode={darkMode}>Machine Learning</HighlightText>, <HighlightText darkMode={darkMode}>Data Related</HighlightText>, and <HighlightText darkMode={darkMode}>Software Engineering</HighlightText>.  
           I am eager to meet new people and embrace new challenges. My goal is to not only expand my technical 
           expertise but also to collaborate and learn from others, building innovative solutions that make a tangible impact.
         </h2>
