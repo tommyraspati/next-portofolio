@@ -252,7 +252,7 @@ export default function Home() {
                   darkMode ? "text-neutral-300" : "text-neutral-700"
                 }`}
               >
-                I'm a fresh graduate with a degree in Computer Science from Universitas Indonesia. While my full name is Raspati, many people know me as
+                I&apos;m a fresh graduate with a degree in Computer Science from Universitas Indonesia. While my full name is Raspati, many people know me as
                 <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
                   {" "}
                   Tommy
@@ -285,7 +285,7 @@ export default function Home() {
                 }`}
               >
                 I love building innovative solutions and collaborating with others to create meaningful impact through
-                technology. I'm always eager to learn new technologies and take on challenging projects that push my
+                technology. I&aposm;m always eager to learn new technologies and take on challenging projects that push my
                 boundaries.
               </p>
             </div>
