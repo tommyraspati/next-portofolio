@@ -1,11 +1,18 @@
-// highlight_text.tsx
-type HighlightTextProps = {
-  children: React.ReactNode;
-  darkMode: boolean;
-};
+"use client"
 
-const HighlightText: React.FC<HighlightTextProps> = ({ children, darkMode }) => (
-  <span className={`${darkMode ? 'highlighted-text-dark-mode' : 'highlighted-text-light-mode'} font-bold`}>{children}</span>
-);
+import type React from "react"
 
-export default HighlightText;
+interface HighlightTextProps {
+  children: React.ReactNode
+  darkMode: boolean
+}
+
+export default function HighlightText({ children, darkMode }: HighlightTextProps) {
+  return (
+    <span
+      className={`font-semibold transition-colors duration-300 ${darkMode ? "text-yellow-400" : "text-yellow-600"}`}
+    >
+      {children}
+    </span>
+  )
+}
