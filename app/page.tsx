@@ -67,7 +67,7 @@ export default function Home() {
       title: "Data Analytics Intern",
       company: "PT. Telekomunikasi Selular",
       period: "Sep 2024 – Dec 2024",
-      image: "/images/telkomsel-logo.png",
+      image: "/images/telkomsel-logo.svg",
       description:
         "Conducted market analysis by visiting mobile credit counters, developed Python web scraping tools using Selenium for competitive intelligence on app trends and competitor pricing, created product review sheets with strategic recommendations, and built a predictive model for customer purchase behavior.",
     },
