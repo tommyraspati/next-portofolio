@@ -1,27 +1,41 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useTheme } from "../providers/theme-provider"
-import { ExternalLink, Filter, Github, FileText } from "lucide-react"
+import { ExternalLink, Filter, Github, FileText, ArrowDown } from "lucide-react"
 import Image from "next/image"
 
 export default function Projects() {
   const { darkMode } = useTheme()
   const [selectedFilter, setSelectedFilter] = useState("All")
+  const [visibleProjectsCount, setVisibleProjectsCount] = useState(3)
 
   const projects = [
+    {
+      name: "Sales Performance Dashboard",
+      description:
+        "An interactive Tableau dashboard analyzing sales and profit performance. It features year-over-year comparisons, breakdowns by product subcategory, and trend analysis over time to identify key growth drivers and areas for improvement.",
+      technologies: ["Tableau", "Data Visualization"],
+      category: "Data Science",
+      image: "/images/project-tableau-sales.png",
+      github: "#",
+      demo: "https://public.tableau.com/app/profile/tommy.raspati/viz/SalesDashboard_17536047808420/SalesDashboard",
+      presentation: "#",
+      status: "Completed",
+      featured: true,
+    },
     {
       name: "Sponzy: Where EOs and Sponsors Meet",
       description:
         "Developed Sponzy, a digital platform to streamline collaboration between Event Organizers (EOs) and sponsors, enhancing the efficiency and transparency of sponsorship management.",
       technologies: ["Python", "Django", "HTML", "CSS", "Tailwind", "PostgreSQL"],
       category: "Web Development",
-      image: "/images/project-sponzy.jpg",
-      github: "#",
-      demo: "http://34.71.2.74:8000/",
+      image: "/images/project-sponzy.png",
+      github: "https://gitlab.cs.ui.ac.id/rpl-capybara-b13/sponzy/-/tree/main?ref_type=heads",
+      demo: "",
       presentation: "#",
-      status: "Live",
-      featured: true,
+      status: "Completed",
+      featured: false,
     },
     {
       name: "Online Thrift Shop Website",
@@ -29,12 +43,12 @@ export default function Projects() {
         "Developed 'Second Treasurer,' an online thrift shop platform facilitating the buying and selling of new and used fashion items.",
       technologies: ["Java", "Spring Boot", "TypeScript", "Next.js", "PostgreSQL"],
       category: "Full Stack",
-      image: "/images/project-thrift.jpg",
+      image: "/images/project-thrift.png",
       github: "#",
-      demo: "#",
-      presentation: "#",
+      demo: "https://frontend-adpro-c2.vercel.app/",
+      presentation: "https://drive.google.com/file/d/1S37HcnZg5nMu8Lmbk8t-VTolGI0Uq7dg/view?usp=sharing",
       status: "Completed",
-      featured: true,
+      featured: false,
     },
     {
       name: "Warehouse Management System (WMS)",
@@ -42,12 +56,12 @@ export default function Projects() {
         "Developed a Warehouse Management System (WMS) website, designed to manage the entire process from incoming goods, production, and sales preparation to supply chain optimization.",
       technologies: ["Python", "Django", "Vue.js", "Tailwind CSS", "PostgreSQL"],
       category: "Full Stack",
-      image: "/images/project-wms.jpg",
+      image: "/images/project-wms.png",
       github: "#",
-      demo: "#",
-      presentation: "#",
+      demo: "https://ppl-a5-frontend.vercel.app/",
+      presentation: "https://drive.google.com/drive/folders/1gvM315UfF1f-J1GM2d6A_xWi2VogSXCN?usp=sharing",
       status: "Completed",
-      featured: true,
+      featured: false,
     },
     {
       name: "Anti-Corruption Complaint System",
@@ -55,7 +69,7 @@ export default function Projects() {
         "A comprehensive platform for reporting corruption cases with both web and mobile interfaces. Developed user dashboard and complaint management features.",
       technologies: ["Django", "Python", "Flutter", "Dart", "PostgreSQL", "AJAX"],
       category: "Full Stack",
-      image: "/images/project-anticorruption.jpg",
+      image: "/images/project-anticorruption.png",
       github: "https://github.com/orgs/PBP-G20Project/repositories",
       demo: "#",
       presentation: "#",
@@ -68,10 +82,10 @@ export default function Projects() {
         "Conducted extensive EDA, then developed a machine learning solution to predict apartment prices and cluster properties based on features like footage, rooms, and location.",
       technologies: ["Python", "Pandas", "Scikit-learn", "Jupyter"],
       category: "Data Science",
-      image: "/images/project-apartment.jpg",
+      image: "/images/project-apartment.webp",
       github: "#",
       demo: "#",
-      presentation: "#",
+      presentation: "https://drive.google.com/file/d/1BQeIpZNPinocAV47SWJ57AnQC2tzn28Q/view?usp=sharing",
       status: "Completed",
       featured: false,
     },
@@ -80,10 +94,10 @@ export default function Projects() {
       description: "Developed a deep learning regression model to predict chess players' Elo ratings based on individual game data.",
       technologies: ["PyTorch", "Python", "Pandas"],
       category: "Machine Learning",
-      image: "/images/project-chess.jpg",
+      image: "/images/project-chess.png",
       github: "#",
       demo: "#",
-      presentation: "#",
+      presentation: "https://drive.google.com/file/d/1YTs7miebwiaypxVaHFPrzgSF_n3AH6At/view",
       status: "Completed",
       featured: false,
     },
@@ -93,7 +107,7 @@ export default function Projects() {
         "Developed a from-scratch implementation of RSA-OAEP encryption and decryption software, featuring 2048-bit key pair generation and a GUI.",
       technologies: ["Python", "Tkinter"],
       category: "Software Development",
-      image: "/images/project-rsa.jpg",
+      image: "/images/project-rsa.webp",
       github: "#",
       demo: "#",
       presentation: "#",
@@ -106,7 +120,7 @@ export default function Projects() {
         "The site you are on right now. A modern, responsive portfolio built with Next.js and Tailwind CSS, featuring dark mode and smooth animations.",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       category: "Web Development",
-      image: "/images/project-portfolio.jpg",
+      image: "/images/project-portofolio.png",
       github: "#",
       demo: "https://tommyraspati.com",
       presentation: "#",
@@ -119,6 +133,15 @@ export default function Projects() {
 
   const filteredProjects =
     selectedFilter === "All" ? projects : projects.filter((project) => project.category === selectedFilter)
+
+  // Reset visible count when filter changes
+  useEffect(() => {
+    setVisibleProjectsCount(3)
+  }, [selectedFilter])
+
+  const handleShowMore = () => {
+    setVisibleProjectsCount((prevCount) => prevCount + 3)
+  }
 
   return (
     <main className="min-h-screen">
@@ -178,7 +201,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <section>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.slice(0, visibleProjectsCount).map((project, index) => (
               <div
                 key={index}
                 className={`rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] flex flex-col ${
@@ -189,7 +212,12 @@ export default function Projects() {
               >
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={project.image || "/placeholder.svg"} alt={project.name} fill className="object-cover" />
+                  <Image
+                    src={project.image || "https://placehold.co/600x400/1e293b/ffffff?text=Project"}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                  />
                   {project.featured && (
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full">
@@ -296,10 +324,10 @@ export default function Projects() {
                         href={project.presentation}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-300 ${
                           darkMode
-                            ? "text-neutral-400 hover:text-neutral-300"
-                            : "text-neutral-500 hover:text-neutral-700"
+                            ? "bg-red-900/40 text-red-400 hover:bg-red-900/60"
+                            : "bg-red-100 text-red-700 hover:bg-red-200"
                         }`}
                       >
                         <FileText size={14} />
@@ -312,6 +340,23 @@ export default function Projects() {
             ))}
           </div>
         </section>
+
+        {/* "Show More" Button */}
+        {filteredProjects.length > visibleProjectsCount && (
+          <div className="text-center mt-12">
+            <button
+              onClick={handleShowMore}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg ${
+                darkMode
+                  ? "bg-neutral-800 text-neutral-50 hover:bg-neutral-700"
+                  : "bg-neutral-100 text-neutral-800 hover:bg-neutral-200"
+              }`}
+            >
+              <ArrowDown size={18} />
+              Show More
+            </button>
+          </div>
+        )}
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-16">

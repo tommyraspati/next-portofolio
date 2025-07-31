@@ -22,7 +22,7 @@ import { SiLetterboxd } from "react-icons/si"
 export default function Home() {
   const { darkMode } = useTheme()
   const [displayedText, setDisplayedText] = useState("")
-  const [expandedExperience, setExpandedExperience] = useState<number | null>(0) // Default first item to be open
+  const [expandedExperience, setExpandedExperience] = useState<number | null>(null) // All items collapsed by default
   const fullName = "Raspati Mahatma Kurnia Dharmatmaja"
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function Home() {
       title: "Data Analytics Intern",
       company: "PT. Telekomunikasi Selular",
       period: "Sep 2024 – Dec 2024",
-      image: "/images/telkomsel-logo.svg",
+      image: "/images/telkomsel-logo.png",
       description:
         "Conducted market analysis by visiting mobile credit counters, developed Python web scraping tools using Selenium for competitive intelligence on app trends and competitor pricing, created product review sheets with strategic recommendations, and built a predictive model for customer purchase behavior.",
     },
@@ -99,6 +99,7 @@ export default function Home() {
       school: "Universitas Indonesia",
       period: "2021 – 2025",
       image: "/images/ui-logo.png",
+      description: "Cumulative GPA: 3.43/4.00. Specializing in Machine Learning, Data Science, and Software Engineering.",
     },
     {
       degree: (
@@ -109,33 +110,39 @@ export default function Home() {
       school: "SMAN 3 Malang",
       period: "2018 – 2021",
       image: "/images/sman3-logo.png",
+      description: "Final Grade: 90.67. Active member of chess, nature enthusiast, and basketball clubs.",
     },
   ]
 
   const featuredProjects = [
     {
-      name: "Warehouse Management System",
-      description: "A comprehensive WMS website to manage goods, production, sales, and supply chain optimization.",
-      technologies: ["Django", "Vue.js", "Tailwind CSS", "PostgreSQL"],
-      image: "/images/project-wms.jpg",
+      name: "Sales Performance Dashboard",
+      description:
+        "An interactive Tableau dashboard analyzing sales and profit performance. It features year-over-year comparisons, breakdowns by product subcategory, and trend analysis over time to identify key growth drivers and areas for improvement.",
+      technologies: ["Tableau", "Data Visualization"],
+      image: "/images/project-tableau-sales.png",
       github: "#",
-      demo: "#",
+      demo: "https://public.tableau.com/app/profile/tommy.raspati/viz/SalesDashboard_17536047808420/SalesDashboard",
+      presentation: "#",
     },
     {
-      name: "Online Thrift Shop Website",
-      description: "Developed 'Second Treasurer,' a platform for buying and selling new and used fashion items.",
-      technologies: ["Spring Boot", "Next.js", "TypeScript", "PostgreSQL"],
-      image: "/images/project-thrift.jpg",
+      name: "Portfolio Website",
+      description:
+        "The site you are on right now. A modern, responsive portfolio built with Next.js and Tailwind CSS, featuring dark mode and smooth animations.",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      image: "/images/project-portofolio.png",
       github: "#",
-      demo: "#",
+      demo: "https://tommyraspati.com",
+      presentation: "#",
     },
     {
-      name: "Sponzy: EO & Sponsor Platform",
-      description: "A digital platform to streamline collaboration between Event Organizers and sponsors.",
-      technologies: ["Django", "Python", "Tailwind CSS", "PostgreSQL"],
-      image: "/images/project-sponzy.jpg",
+      name: "Chess Rating Prediction",
+      description: "Developed a deep learning regression model to predict chess players' Elo ratings based on individual game data.",
+      technologies: ["PyTorch", "Python", "Pandas"],
+      image: "/images/project-chess.png",
       github: "#",
-      demo: "http://34.71.2.74:8000/",
+      demo: "#",
+      presentation: "https://drive.google.com/drive/folders/1ay5AMcpk8chr0cqoskkpGk5Q2RyUynDw",
     },
   ]
 
@@ -153,12 +160,10 @@ export default function Home() {
     "Spring Boot",
     "Flutter",
     "Machine Learning",
+    "Tableau",
     "Data Science",
     "PostgreSQL",
-    "MongoDB",
     "Git/GitHub",
-    "Docker",
-    "AWS",
     "Tailwind CSS",
   ]
 
@@ -169,7 +174,7 @@ export default function Home() {
         <section className="mb-20">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="flex-shrink-0">
-              <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl">
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-neutral-200 dark:border-neutral-700 shadow-2xl">
                 <Image
                   src="/images/profile-picture.jpg"
                   alt="Tommy Raspati"
@@ -285,7 +290,7 @@ export default function Home() {
                 }`}
               >
                 I love building innovative solutions and collaborating with others to create meaningful impact through
-                technology. I&aposm;m always eager to learn new technologies and take on challenging projects that push my
+                technology. I&apos;m always eager to learn new technologies and take on challenging projects that push my
                 boundaries.
               </p>
             </div>
@@ -372,7 +377,12 @@ export default function Home() {
               >
                 <div className="flex items-start gap-6">
                   <div className="relative w-12 h-12 flex-shrink-0">
-                    <Image src={exp.image} alt={`${exp.company} logo`} fill className="object-contain rounded-md" />
+                    <Image
+                      src={exp.image || "https://placehold.co/100x100/e0e0e0/000000?text=Logo"}
+                      alt={`${exp.company} logo`}
+                      fill
+                      className="object-contain rounded-md"
+                    />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between">
@@ -451,7 +461,12 @@ export default function Home() {
               >
                 <div className="flex items-start gap-6">
                   <div className="relative w-12 h-12 flex-shrink-0">
-                    <Image src={edu.image} alt={`${edu.school} logo`} fill className="object-contain rounded-md" />
+                    <Image
+                      src={edu.image || "https://placehold.co/100x100/e0e0e0/000000?text=Logo"}
+                      alt={`${edu.school} logo`}
+                      fill
+                      className="object-contain rounded-md"
+                    />
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
@@ -472,7 +487,7 @@ export default function Home() {
                     </div>
                     <p
                       className={`text-md font-medium mb-3 transition-colors duration-300 ${
-                        darkMode ? "text-emerald-400" : "text-emerald-600"
+                        darkMode ? "text-neutral-300" : "text-neutral-700"
                       }`}
                     >
                       {edu.degree}
@@ -482,7 +497,7 @@ export default function Home() {
                         darkMode ? "text-neutral-300" : "text-neutral-600"
                       }`}
                     >
-                    
+                      {edu.description}
                     </p>
                   </div>
                 </div>
@@ -517,16 +532,21 @@ export default function Home() {
             {featuredProjects.map((project, index) => (
               <div
                 key={index}
-                className={`rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${
+                className={`rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] flex flex-col ${
                   darkMode
                     ? "bg-neutral-800/50 border border-neutral-700/50 hover:border-neutral-600/50"
                     : "bg-neutral-100 border border-neutral-200 hover:border-neutral-300 shadow-lg hover:shadow-xl"
                 }`}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={project.image} alt={project.name} fill className="object-cover" />
+                  <Image
+                    src={project.image || "https://placehold.co/600x400/1e293b/ffffff?text=Project"}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3
                     className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
                       darkMode ? "text-neutral-50" : "text-neutral-900"
@@ -535,7 +555,7 @@ export default function Home() {
                     {project.name}
                   </h3>
                   <p
-                    className={`mb-4 leading-relaxed transition-colors duration-300 ${
+                    className={`mb-4 leading-relaxed flex-grow transition-colors duration-300 ${
                       darkMode ? "text-neutral-300" : "text-neutral-600"
                     }`}
                   >
@@ -553,7 +573,7 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 mt-auto">
                     {project.github && project.github !== "#" && (
                       <a
                         href={project.github}
@@ -584,12 +604,77 @@ export default function Home() {
                         Demo
                       </a>
                     )}
+                    {project.presentation && project.presentation !== "#" && (
+                      <a
+                        href={project.presentation}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-300 ${
+                          darkMode
+                            ? "bg-red-900/40 text-red-400 hover:bg-red-900/60"
+                            : "bg-red-100 text-red-700 hover:bg-red-200"
+                        }`}
+                      >
+                        <FileText size={14} />
+                        PDF
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
+
+        {/* Let's Connect Section */}
+        <section className="mt-20">
+          <div className="text-center p-8 md:p-12 rounded-2xl bg-gradient-to-tr from-purple-400/10 via-transparent to-blue-400/10 relative overflow-hidden border border-neutral-200 dark:border-neutral-800">
+            <div className="absolute -top-12 -right-12 w-48 h-48 bg-purple-400/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl"></div>
+            
+            <div className="relative z-10">
+              <h2
+                style={{ fontFamily: "'Caveat', cursive" }} // Font unik
+                className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+              >
+                Lets Connect
+              </h2>
+              <p
+                className={`text-lg mb-8 max-w-2xl mx-auto transition-colors duration-300 ${
+                  darkMode ? "text-neutral-300" : "text-neutral-600"
+                }`}
+              >
+                My inbox is always open. Whether you have an opportunity or just want to say hi, I'll get back to you!
+              </p>
+              <div className="flex justify-center gap-4">
+                {socialLinks.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${social.color} ${
+                        darkMode
+                          ? "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+                          : "bg-white/50 backdrop-blur-sm text-neutral-600 hover:bg-white/80"
+                      }`}
+                      aria-label={social.label}
+                    >
+                      <Icon size={20} />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className={`text-center py-8 mt-12 border-t ${darkMode ? 'border-neutral-800 text-neutral-500' : 'border-neutral-200 text-neutral-500'}`}>
+            <p>&copy; {new Date().getFullYear()} Raspati Mahatma Kurnia Dharmatmaja. All Rights Reserved.</p>
+        </footer>
       </div>
     </main>
   )
