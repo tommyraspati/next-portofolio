@@ -99,7 +99,6 @@ export default function Home() {
       school: "Universitas Indonesia",
       period: "2021 – 2025",
       image: "/images/ui-logo.png",
-      description: "Cumulative GPA: 3.43/4.00. Specializing in Machine Learning, Data Science, and Software Engineering.",
     },
     {
       degree: (
@@ -110,7 +109,6 @@ export default function Home() {
       school: "SMAN 3 Malang",
       period: "2018 – 2021",
       image: "/images/sman3-logo.png",
-      description: "Final Grade: 90.67. Active member of chess, nature enthusiast, and basketball clubs.",
     },
   ]
 
@@ -497,7 +495,6 @@ export default function Home() {
                         darkMode ? "text-neutral-300" : "text-neutral-600"
                       }`}
                     >
-                      {edu.description}
                     </p>
                   </div>
                 </div>
