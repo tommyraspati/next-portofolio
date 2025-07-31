@@ -644,7 +644,7 @@ export default function Home() {
                   darkMode ? "text-neutral-300" : "text-neutral-600"
                 }`}
               >
-                My inbox is always open. Whether you have an opportunity or just want to say hi, I'll get back to you!
+                My inbox is always open. Whether you have an opportunity or just want to say hi, I&apos;ll get back to you!
               </p>
               <div className="flex justify-center gap-4">
                 {socialLinks.map((social, index) => {
